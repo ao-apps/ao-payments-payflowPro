@@ -47,6 +47,14 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		<tag>HEAD</tag>
 	</scm>
 
+	<repositories>
+		<!-- See http://stackoverflow.com/questions/1164043/maven-how-to-include-jars-which-are-not-available-in-reps-into-a-j2ee-project -->
+		<repository>
+			<id>project-repository</id>
+			<url>file://${project.basedir}/repository</url>
+		</repository>
+	</repositories>
+
 	<profiles>
 		<profile>
 			<id>release</id>
@@ -84,6 +92,14 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 			<groupId>com.aoindustries</groupId>
 			<artifactId>aocode-public</artifactId>
 			<version>1.8.0-SNAPSHOT</version>
+		</dependency>
+		<!-- See https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/ -->
+		<!-- See https://github.com/paypal/sdk-packages/tree/gh-pages/paypal-payments-pro-payflow-edition -->
+		<!-- Installed with mvn install:install-file -Dfile=payflow-v440.jar -DgroupId=com.paypal -DartifactId=payflow -Dversion=v440 -Dpackaging=jar -DlocalRepositoryPath=repository -->
+		<dependency>
+			<groupId>com.paypal</groupId>
+			<artifactId>payflow</artifactId>
+			<version>v440</version>
 		</dependency>
 	</dependencies>
 </project>
