@@ -27,7 +27,7 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 	<parent>
 		<groupId>com.aoindustries</groupId>
 		<artifactId>ao-credit-cards</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<groupId>com.aoindustries</groupId>
@@ -86,12 +86,12 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>ao-credit-cards-api</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>aocode-public</artifactId>
-			<version>1.8.0-SNAPSHOT</version>
+			<version>1.8.0</version>
 		</dependency>
 		<!-- See https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/ -->
 		<!-- See https://github.com/paypal/sdk-packages/tree/gh-pages/paypal-payments-pro-payflow-edition -->
