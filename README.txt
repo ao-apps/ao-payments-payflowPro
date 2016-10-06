@@ -1,4 +1,4 @@
-Provider for the PayflowPro_XMLPay system.
+Provider for the Payflow Pro XMLPay system.
 
 For questions or support, please contact:
 
