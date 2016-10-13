@@ -1,5 +1,5 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://www.aoindustries.com/) [AO Credit Cards](https://www.aoindustries.com/ao-credit-cards/) / [Payflow Pro XMLPay](https://www.aoindustries.com/ao-credit-cards/payflowPro/)
-Provider for the Payflow Pro XMLPay system.
+Provider for the [Payflow Pro XMLPay system](https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/).
 
 ## Project Links
 * [Project Home](https://www.aoindustries.com/ao-credit-cards/payflowPro/)
