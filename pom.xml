@@ -36,13 +36,12 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 	<packaging>jar</packaging>
 
 	<properties>
-		<bookPath>/${project.parent.artifactId}/payflowPro</bookPath>
 		<shortTitle>Payflow Pro XMLPay</shortTitle>
 		<description.html><![CDATA[Provider for the <a target="_top" href="https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/">Payflow Pro XMLPay system</a>.]]></description.html>
 	</properties>
 
 	<name>AO Credit Cards Payflow Pro XMLPay</name>
-	<url>https://aoindustries.com${bookPath}/</url><!-- Can't inherit due to multi-module -->
+	<url>https://aoindustries.com/${project.parent.artifactId}/payflowPro/</url>
 	<description>Provider for the Payflow Pro XMLPay system.</description>
 	<inceptionYear>2007</inceptionYear>
 
