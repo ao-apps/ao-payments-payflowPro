@@ -26,8 +26,9 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 
 	<parent>
 		<groupId>com.aoindustries</groupId>
-		<artifactId>ao-credit-cards</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<artifactId>ao-oss-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.aoindustries</groupId>
@@ -36,12 +37,14 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 	<packaging>jar</packaging>
 
 	<properties>
+		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://aoindustries.com/ao-credit-cards/">AO Credit Cards</a>
+/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<shortTitle>Payflow Pro XMLPay</shortTitle>
 		<description.html><![CDATA[Provider for the <a target="_top" href="https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/">Payflow Pro XMLPay system</a>.]]></description.html>
 	</properties>
 
 	<name>AO Credit Cards Payflow Pro XMLPay</name>
-	<url>https://aoindustries.com/${project.parent.artifactId}/payflowPro/</url>
+	<url>https://aoindustries.com/ao-credit-cards/payflowPro/</url>
 	<description>Provider for the Payflow Pro XMLPay system.</description>
 	<inceptionYear>2007</inceptionYear>
 
