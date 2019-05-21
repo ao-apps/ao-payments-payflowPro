@@ -261,7 +261,7 @@ public class PayflowPro implements MerchantServicesProvider {
 			invoice.setCustomerInfo(customerInfo);
 
 			// CreditCard
-			paypal.payflow.CreditCard ppCreditCard = new paypal.payflow.CreditCard(creditCard.getCardNumber(), creditCard.getExpirationDateMMYY());
+			paypal.payflow.CreditCard ppCreditCard = new paypal.payflow.CreditCard(creditCard.getCardNumber(), creditCard.getExpirationDateMMYY(false));
 			String cvv2 = creditCard.getCardCode();
 			if(cvv2 != null && cvv2.length() > 0) ppCreditCard.setCvv2(cvv2);
 			ppCreditCard.setName(CreditCard.getFullName(creditCard.getFirstName(), creditCard.getLastName()));
@@ -311,6 +311,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				null,
 				null,
 				null,
+				null,
+				null,
+				null,
 				null
 			);
 		}
@@ -328,6 +331,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				TransactionResult.ErrorCode.ERROR_TRY_AGAIN.name(),
 				TransactionResult.ErrorCode.ERROR_TRY_AGAIN,
 				err.getMessage(),
+				null,
+				null,
+				null,
 				null,
 				null,
 				null,
@@ -400,6 +406,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				pnref,
 				null,
 				null,
+				null,
+				null,
+				null,
 				Integer.toString(result),
 				AuthorizationResult.ApprovalResult.APPROVED,
 				null,
@@ -445,6 +454,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				pnref,
 				null,
 				null,
+				null,
+				null,
+				null,
 				Integer.toString(result),
 				AuthorizationResult.ApprovalResult.DECLINED,
 				respMsg,
@@ -466,6 +478,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				null,
 				null,
 				pnref,
+				null,
+				null,
+				null,
 				null,
 				null,
 				Integer.toString(result),
@@ -620,6 +635,9 @@ public class PayflowPro implements MerchantServicesProvider {
 				errorCode,
 				respMsg,
 				pnref,
+				null,
+				null,
+				null,
 				null,
 				null,
 				null,
