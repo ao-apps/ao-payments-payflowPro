@@ -28,12 +28,14 @@ import com.aoindustries.creditcards.CreditCard;
 import com.aoindustries.creditcards.CreditResult;
 import com.aoindustries.creditcards.MerchantServicesProvider;
 import com.aoindustries.creditcards.SaleResult;
+import com.aoindustries.creditcards.TokenizedCreditCard;
 import com.aoindustries.creditcards.Transaction;
 import com.aoindustries.creditcards.TransactionRequest;
 import com.aoindustries.creditcards.TransactionResult;
 import com.aoindustries.creditcards.VoidResult;
-import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import paypal.payflow.AuthorizationTransaction;
@@ -700,42 +702,47 @@ public class PayflowPro implements MerchantServicesProvider {
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public String storeCreditCard(CreditCard creditCard) throws IOException {
-		throw new com.aoindustries.lang.NotImplementedException();
+	public String storeCreditCard(CreditCard creditCard) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public void updateCreditCard(CreditCard creditCard) throws IOException {
-		throw new com.aoindustries.lang.NotImplementedException();
+	public void updateCreditCard(CreditCard creditCard) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public void updateCreditCardNumberAndExpiration(
 		CreditCard creditCard,
 		String cardNumber,
 		byte expirationMonth,
 		short expirationYear,
 		String cardCode
-	) throws IOException {
-		throw new com.aoindustries.lang.NotImplementedException();
+	) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public void updateCreditCardExpiration(
 		CreditCard creditCard,
 		byte expirationMonth,
 		short expirationYear
-	) throws IOException {
-		throw new com.aoindustries.lang.NotImplementedException();
+	) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public void deleteCreditCard(CreditCard creditCard) throws IOException {
-		throw new com.aoindustries.lang.NotImplementedException();
+	public void deleteCreditCard(CreditCard creditCard) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public boolean canGetTokenizedCreditCards() {
+		return false;
+	}
+
+	@Override
+	public Map<String, TokenizedCreditCard> getTokenizedCreditCards(Map<String,CreditCard> persistedCards, PrintWriter verboseOut, PrintWriter infoOut, PrintWriter warningOut) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException();
 	}
 }
