@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
 import java.util.Enumeration;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Properties;
 import junit.framework.Test;
@@ -129,7 +130,7 @@ public class PayflowProTestTODO extends TestCase {
 				"378282246310005",
 				null,
 				(byte)11,
-				(short)(Calendar.getInstance().get(Calendar.YEAR)+1),
+				(short)(new GregorianCalendar().get(Calendar.YEAR) + 1),
 				"123",
 				"First",
 				"Last",
@@ -158,7 +159,7 @@ public class PayflowProTestTODO extends TestCase {
 				"6011111111111117",
 				null,
 				(byte)7,
-				(short)(Calendar.getInstance().get(Calendar.YEAR)+1),
+				(short)(new GregorianCalendar().get(Calendar.YEAR) + 1),
 				null,
 				"D First",
 				"D Last",
@@ -187,7 +188,7 @@ public class PayflowProTestTODO extends TestCase {
 				"5555555555554444",
 				null,
 				(byte)4,
-				(short)(Calendar.getInstance().get(Calendar.YEAR)+3),
+				(short)(new GregorianCalendar().get(Calendar.YEAR) + 3),
 				"123",
 				"First",
 				"Last",
@@ -216,7 +217,7 @@ public class PayflowProTestTODO extends TestCase {
 				"4111111111111111",
 				null,
 				(byte)3,
-				(short)(Calendar.getInstance().get(Calendar.YEAR)+7),
+				(short)(new GregorianCalendar().get(Calendar.YEAR) + 7),
 				null,
 				null,
 				null,
