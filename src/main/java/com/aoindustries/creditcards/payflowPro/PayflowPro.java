@@ -1,6 +1,6 @@
 /*
  * ao-credit-cards-payflowPro - Provider for the Payflow Pro XMLPay system.
- * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2019  AO Industries, Inc.
+ * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,22 +63,22 @@ import paypal.payflow.UserInfo;
  *     If you set up one or more additional users on the account, this value is the ID of the user authorized to process transactions.
  *     If, however, you have not sest up additional users on the account, user has the same value as vendor.
  *   </li>
- *   <li>vendor - Your merchant login ID that you created when you registered for the Payflow Pro account.  This value is case sensitive.</code>
+ *   <li>vendor - Your merchant login ID that you created when you registered for the Payflow Pro account.  This value is case sensitive.</li>
  *   <li>partner -
  *     The ID provided to you by the authorized PayPal Reseller who registered you for the Payflow Pro service.
  *     If you purchased your account directly from PayPal, use PayPal.  This values is case-sensitive.</li>
  *   <li>password - User's password (string).</li>
  * </ol>
  *
- * TODO: Should we support the GetStatus call???<br />
- * TODO: Should we support Buyer Authentication Service?<br />
+ * TODO: Should we support the GetStatus call???<br>
+ * TODO: Should we support Buyer Authentication Service?<br>
  * TODO: Should we support separate Freight and Handling amounts instead of just
  *       the one shipping?  We would need to automatically combine them on
- *       processors that don't support the distinction.<br />
- * TODO: Is Prenote used for storing cards?<br />
- * TODO: Use AMEXID?<br />
- * TODO: Support SettleDate?<br />
- * TODO: Support SHIPTOPHONENUM?<br />
+ *       processors that don't support the distinction.<br>
+ * TODO: Is Prenote used for storing cards?<br>
+ * TODO: Use AMEXID?<br>
+ * TODO: Support SettleDate?<br>
+ * TODO: Support SHIPTOPHONENUM?<br>
  * TODO: Possible better rates if we provide the merchant details and ship from details.
  *
  * @author  AO Industries, Inc.
