@@ -27,7 +27,7 @@ Provider for the [Payflow Pro XMLPay system](https://developer.paypal.com/docs/c
 * [Project Home](https://aoindustries.com/ao-credit-cards/payflowPro/)
 * [Changelog](https://aoindustries.com/ao-credit-cards/payflowPro/changelog)
 * [API Docs](https://aoindustries.com/ao-credit-cards/payflowPro/apidocs/)
-* [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.aoindustries%22%20AND%20a:%22ao-credit-cards-payflowPro%22)
+* [Maven Central Repository](https://search.maven.org/artifact/com.aoindustries/ao-credit-cards-payflowPro)
 * [GitHub](https://github.com/aoindustries/ao-credit-cards-payflowPro)
 
 ## Contact Us
