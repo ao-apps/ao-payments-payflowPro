@@ -37,6 +37,8 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 / <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<shortTitle>Payflow Pro XMLPay</shortTitle>
 		<description.html><![CDATA[Provider for the <a target="_top" href="https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/">Payflow Pro XMLPay system</a>.]]></description.html>
+		<!-- Dependencies -->
+		<org.apache.commons:commons-lang3:version>3.9</org.apache.commons:commons-lang3:version>
 	</properties>
 
 	<name>AO Credit Cards Payflow Pro XMLPay</name>
@@ -73,6 +75,7 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-credit-cards/api/apidocs/</link>
 								<link>https://aoindustries.com/ao-lang/apidocs/</link>
+								<link>https://commons.apache.org/proper/commons-lang/javadocs/api-${org.apache.commons:commons-lang3:version}/</link>
 								<!-- No apidocs: <groupId>com.paypal</groupId><artifactId>payflow</artifactId> -->
 							</links>
 						</configuration>
@@ -96,6 +99,9 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
+				<groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>${org.apache.commons:commons-lang3:version}</version>
+			</dependency>
+			<dependency>
 				<!-- See https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/ -->
 				<!-- See https://github.com/paypal/sdk-packages/tree/gh-pages/paypal-payments-pro-payflow-edition -->
 				<!-- Installed with mvn install:install-file -Dfile=payflow-v440.jar -DgroupId=com.paypal -DartifactId=payflow -Dversion=v440 -Dpackaging=jar -DlocalRepositoryPath=repository -->
@@ -116,6 +122,9 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.paypal</groupId><artifactId>payflow</artifactId>
