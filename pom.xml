@@ -54,6 +54,11 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		<tag>HEAD</tag>
 	</scm>
 
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/aoindustries/ao-credit-cards-payflowPro/issues</url>
+	</issueManagement>
+
 	<repositories>
 		<!-- See http://stackoverflow.com/questions/1164043/maven-how-to-include-jars-which-are-not-available-in-reps-into-a-j2ee-project -->
 		<repository>
