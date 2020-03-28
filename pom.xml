@@ -38,7 +38,7 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		<shortTitle>Payflow Pro XMLPay</shortTitle>
 		<description.html><![CDATA[Provider for the <a target="_top" href="https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/">Payflow Pro XMLPay system</a>.]]></description.html>
 		<!-- Dependencies -->
-		<org.apache.commons.commons-lang3.version>3.9</org.apache.commons.commons-lang3.version>
+		<org.apache.commons.commons-lang3.version>3.10</org.apache.commons.commons-lang3.version>
 	</properties>
 
 	<name>AO Credit Cards Payflow Pro XMLPay</name>
