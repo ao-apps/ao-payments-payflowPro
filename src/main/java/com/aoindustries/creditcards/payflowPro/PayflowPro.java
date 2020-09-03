@@ -250,8 +250,11 @@ public class PayflowPro implements MerchantServicesProvider {
 			if(shippingPostalCode != null && shippingPostalCode.length() > 0) shipTo.setShipToZip(CreditCard.numbersOnly(shippingPostalCode));
 			String shippingCountry = transactionRequest.getShippingCountryCode();
 			if(shippingCountry != null && shippingCountry.length() > 0) {
-				if("US".equals(shippingCountry)) shipTo.setShipToCountry("840");
-				else System.err.println("WARNING: PayflowPro: shippingCountry unknown, not sending SHIPTOCOUNTRY: "+shippingCountry);
+				if("US".equals(shippingCountry)) {
+					shipTo.setShipToCountry("840");
+				} else {
+					if(logger.isLoggable(Level.WARNING)) logger.warning("shippingCountry unknown, not sending SHIPTOCOUNTRY: " + shippingCountry);
+				}
 			}
 			invoice.setShipTo(shipTo);
 
