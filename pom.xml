@@ -38,7 +38,7 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 		<shortTitle>Payflow Pro XMLPay</shortTitle>
 		<description.html><![CDATA[Provider for the <a target="${javadoc.target}" href="https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/">Payflow Pro XMLPay system</a>.]]></description.html>
 		<!-- Dependencies -->
-		<commons-lang3.version>3.11</commons-lang3.version>
+		<commons-lang3.version>3.12.0</commons-lang3.version>
 	</properties>
 
 	<name>AO Credit Cards Payflow Pro XMLPay</name>
@@ -143,7 +143,7 @@ along with ao-credit-cards-payflowPro.  If not, see <http://www.gnu.org/licenses
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</location>
 								</offlineLink>
 								<offlineLink>
-									<url>https://commons.apache.org/proper/commons-lang/javadocs/api-${commons-lang3.version}/</url>
+									<url>https://javadoc.io/doc/org.apache.commons/commons-lang3/${commons-lang3.version}/</url>
 									<location>${project.build.directory}/offlineLinks/org.apache.commons/commons-lang3</location>
 								</offlineLink>
 								<!-- No apidocs: <groupId>com.paypal</groupId><artifactId>payflow</artifactId> -->
