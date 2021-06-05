@@ -20,19 +20,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-payments-payflowPro.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.creditcards.payflowPro;
+package com.aoapps.payments.payflowPro;
 
-import com.aoindustries.creditcards.AuthorizationResult;
-import com.aoindustries.creditcards.CaptureResult;
-import com.aoindustries.creditcards.CreditCard;
-import com.aoindustries.creditcards.CreditResult;
-import com.aoindustries.creditcards.MerchantServicesProvider;
-import com.aoindustries.creditcards.SaleResult;
-import com.aoindustries.creditcards.TokenizedCreditCard;
-import com.aoindustries.creditcards.Transaction;
-import com.aoindustries.creditcards.TransactionRequest;
-import com.aoindustries.creditcards.TransactionResult;
-import com.aoindustries.creditcards.VoidResult;
+import com.aoapps.payments.AuthorizationResult;
+import com.aoapps.payments.CaptureResult;
+import com.aoapps.payments.CreditCard;
+import com.aoapps.payments.CreditResult;
+import com.aoapps.payments.MerchantServicesProvider;
+import com.aoapps.payments.SaleResult;
+import com.aoapps.payments.TokenizedCreditCard;
+import com.aoapps.payments.Transaction;
+import com.aoapps.payments.TransactionRequest;
+import com.aoapps.payments.TransactionResult;
+import com.aoapps.payments.VoidResult;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.Map;
