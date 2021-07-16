@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/ao-payments-payflowPro/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/ao-payments-payflowPro/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-payments-payflowPro/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-payments-payflowPro)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps%3Aao-payments-payflowPro)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-payments-payflowPro&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-payments-payflowPro&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-payments-payflowPro&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-payments-payflowPro&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-payments-payflowPro&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-payments-payflowPro&metric=Coverage)
 
 Provider for the [Payflow Pro XMLPay system](https://developer.paypal.com/docs/classic/api/nvpsoap-sdks/).
 
