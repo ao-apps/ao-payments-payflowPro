@@ -71,20 +71,20 @@ along with ao-payments-payflowPro.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/ao-payments-payflowPro.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/ao-payments-payflowPro.git</developerConnection>
-		<url>https://github.com/aoindustries/ao-payments-payflowPro</url>
+		<connection>scm:git:git://github.com/ao-apps/ao-payments-payflowPro.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/ao-payments-payflowPro.git</developerConnection>
+		<url>https://github.com/ao-apps/ao-payments-payflowPro</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/ao-payments-payflowPro/issues</url>
+		<url>https://github.com/ao-apps/ao-payments-payflowPro/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/ao-payments-payflowPro/actions</url>
+		<url>https://github.com/ao-apps/ao-payments-payflowPro/actions</url>
 	</ciManagement>
 
 	<repositories>
