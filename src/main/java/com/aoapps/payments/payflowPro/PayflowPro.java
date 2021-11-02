@@ -589,9 +589,6 @@ public class PayflowPro implements MerchantServicesProvider {
 			) {
 				communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
 				errorCode = TransactionResult.ErrorCode.INVALID_CURRENCY_CODE;
-			} else if(result==3) {
-				communicationResult = TransactionResult.CommunicationResult.IO_ERROR;
-				errorCode = TransactionResult.ErrorCode.INVALID_TRANSACTION_TYPE;
 			} else if(
 				result==101
 				|| result==-23
