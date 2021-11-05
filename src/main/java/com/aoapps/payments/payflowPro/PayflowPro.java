@@ -110,7 +110,7 @@ public class PayflowPro implements MerchantServicesProvider {
 	/**
 	 * @deprecated  certPath is no longer used
 	 */
-	@Deprecated
+	@Deprecated(forRemoval = true)
 	public PayflowPro(String providerId, String user, String vendor, String partner, String password, String certPath) {
 		this.providerId = providerId;
 		this.user = user;
