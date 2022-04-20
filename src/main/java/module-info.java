@@ -1,6 +1,6 @@
 /*
  * ao-payments-payflowPro - Provider for the Payflow Pro XMLPay system.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,12 +21,12 @@
  * along with ao-payments-payflowPro.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.payments.payflowPro {
-	exports com.aoapps.payments.payflowPro;
-	// Direct
-	requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
-	requires com.aoapps.payments.api; // <groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId>
-	requires org.apache.commons.lang3; // <groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId>
-	requires payflow.v440; // <groupId>com.paypal</groupId><artifactId>payflow</artifactId>
-	// Java SE
-	requires java.logging;
+  exports com.aoapps.payments.payflowPro;
+  // Direct
+  requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
+  requires com.aoapps.payments.api; // <groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId>
+  requires org.apache.commons.lang3; // <groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId>
+  requires payflow.v440; // <groupId>com.paypal</groupId><artifactId>payflow</artifactId>
+  // Java SE
+  requires java.logging;
 }
