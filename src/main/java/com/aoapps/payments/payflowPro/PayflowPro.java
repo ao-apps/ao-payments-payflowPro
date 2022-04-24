@@ -151,12 +151,12 @@ public class PayflowPro implements MerchantServicesProvider {
       }
       return line2.trim();
     } else {
-      line1=line1.trim();
+      line1 = line1.trim();
       if (line2 == null) {
         return line1;
       }
-      line2=line2.trim();
-      return (line1+" "+line2).trim();
+      line2 = line2.trim();
+      return (line1 + " " + line2).trim();
     }
   }
 
@@ -171,15 +171,15 @@ public class PayflowPro implements MerchantServicesProvider {
       SDKProperties.setTimeOut(TIMEOUT);
 
       UserInfo userInfo = new UserInfo(
-        user,
-        vendor == null ? "" : vendor,
-        partner,
-        password
+          user,
+          vendor == null ? "" : vendor,
+          partner,
+          password
       );
       PayflowConnectionData connectionData = new PayflowConnectionData(
-        transactionRequest.getTestMode() ? TEST_HOST_ADDRESS : LIVE_HOST_ADDRESS,
-        HOST_PORT,
-        TIMEOUT
+          transactionRequest.getTestMode() ? TEST_HOST_ADDRESS : LIVE_HOST_ADDRESS,
+          HOST_PORT,
+          TIMEOUT
       );
 
       // Invoice
@@ -194,11 +194,11 @@ public class PayflowPro implements MerchantServicesProvider {
       }
       String comment1 = transactionRequest.getDescription();
       if (comment1 != null && comment1.length() > 0) {
-        invoice.setComment1("Transaction Description: "+comment1);
+        invoice.setComment1("Transaction Description: " + comment1);
       }
       String comment2 = creditCard.getComments();
       if (comment2 != null && comment2.length() > 0) {
-        invoice.setComment2("Credit Card Comments: "+comment2);
+        invoice.setComment2("Credit Card Comments: " + comment2);
       }
       String orderNumber = transactionRequest.getOrderNumber();
       if (orderNumber != null && orderNumber.length() > 0) {
@@ -356,7 +356,7 @@ public class PayflowPro implements MerchantServicesProvider {
       } else if ("S".equals(trxType)) {
         transaction = new SaleTransaction(userInfo, connectionData, invoice, cardTender, requestId);
       } else {
-        throw new AssertionError("Unexpected value for trxType: "+trxType);
+        throw new AssertionError("Unexpected value for trxType: " + trxType);
       }
       //transaction.setClientInfo(clientInfo);
 
@@ -373,24 +373,24 @@ public class PayflowPro implements MerchantServicesProvider {
        */
     } catch (Exception err) {
       return new AuthorizationResult(
-        getProviderId(),
-        TransactionResult.CommunicationResult.LOCAL_ERROR,
-        TransactionResult.ErrorCode.UNKNOWN.name(),
-        TransactionResult.ErrorCode.UNKNOWN,
-        err.getMessage(),
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+          getProviderId(),
+          TransactionResult.CommunicationResult.LOCAL_ERROR,
+          TransactionResult.ErrorCode.UNKNOWN.name(),
+          TransactionResult.ErrorCode.UNKNOWN,
+          err.getMessage(),
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
       );
     }
 
@@ -402,24 +402,24 @@ public class PayflowPro implements MerchantServicesProvider {
       // TODO: Check for duplicates?
     } catch (Exception err) {
       return new AuthorizationResult(
-        getProviderId(),
-        TransactionResult.CommunicationResult.GATEWAY_ERROR,
-        TransactionResult.ErrorCode.ERROR_TRY_AGAIN.name(),
-        TransactionResult.ErrorCode.ERROR_TRY_AGAIN,
-        err.getMessage(),
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+          getProviderId(),
+          TransactionResult.CommunicationResult.GATEWAY_ERROR,
+          TransactionResult.ErrorCode.ERROR_TRY_AGAIN.name(),
+          TransactionResult.ErrorCode.ERROR_TRY_AGAIN,
+          err.getMessage(),
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
       );
     }
     TransactionResponse transactionResponse = response.getTransactionResponse();
@@ -432,15 +432,15 @@ public class PayflowPro implements MerchantServicesProvider {
     String authCode = transactionResponse.getAuthCode();
     String avsAddr = transactionResponse.getAvsAddr(); // Y, N, X, or null
     if (avsAddr == null || avsAddr.length() == 0) {
-      avsAddr="?";
+      avsAddr = "?";
     }
     String avsZip = transactionResponse.getAvsZip(); // Y, N, X, or null
     if (avsZip == null || avsZip.length() == 0) {
-      avsZip="?";
+      avsZip = "?";
     }
     String iavs = transactionResponse.getIavs(); // International AVS.  Y, N, X, or null
     if (iavs == null || iavs.length() == 0) {
-      iavs="?";
+      iavs = "?";
     }
     // String cardSecure = transactionResponse.getCardSecure(); // ???
 
@@ -465,61 +465,61 @@ public class PayflowPro implements MerchantServicesProvider {
     AuthorizationResult.AvsResult avsResult;
     if ("Y".equals(avsAddr)) {
       if ("Y".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.ADDRESS_Y_ZIP_5;
+        avsResult = AuthorizationResult.AvsResult.ADDRESS_Y_ZIP_5;
       } else if ("N".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.ADDRESS_Y_ZIP_N;
+        avsResult = AuthorizationResult.AvsResult.ADDRESS_Y_ZIP_N;
       } else if ("X".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
+        avsResult = AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
       } else {
-        avsResult=AuthorizationResult.AvsResult.UNAVAILABLE;
+        avsResult = AuthorizationResult.AvsResult.UNAVAILABLE;
       }
     } else if ("N".equals(avsAddr)) {
       if ("Y".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.ADDRESS_N_ZIP_5;
+        avsResult = AuthorizationResult.AvsResult.ADDRESS_N_ZIP_5;
       } else if ("N".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.ADDRESS_N_ZIP_N;
+        avsResult = AuthorizationResult.AvsResult.ADDRESS_N_ZIP_N;
       } else if ("X".equals(avsZip)) {
-        avsResult=AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
+        avsResult = AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
       } else {
-        avsResult=AuthorizationResult.AvsResult.UNAVAILABLE;
+        avsResult = AuthorizationResult.AvsResult.UNAVAILABLE;
       }
     } else if ("X".equals(avsAddr)) {
-      avsResult=AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
+      avsResult = AuthorizationResult.AvsResult.SERVICE_NOT_SUPPORTED;
     } else {
-      avsResult=AuthorizationResult.AvsResult.UNAVAILABLE;
+      avsResult = AuthorizationResult.AvsResult.UNAVAILABLE;
     }
 
     if (result == 0) {
       // Approved
       return new AuthorizationResult(
-        getProviderId(),
-        TransactionResult.CommunicationResult.SUCCESS,
-        null,
-        null,
-        null,
-        pnref,
-        null,
-        Integer.toString(result),
-        AuthorizationResult.ApprovalResult.APPROVED,
-        null,
-        null,
-        null,
-        null,
-        cvv2Match,
-        cvvResult,
-        avsAddr+avsZip+iavs,
-        avsResult,
-        authCode
+          getProviderId(),
+          TransactionResult.CommunicationResult.SUCCESS,
+          null,
+          null,
+          null,
+          pnref,
+          null,
+          Integer.toString(result),
+          AuthorizationResult.ApprovalResult.APPROVED,
+          null,
+          null,
+          null,
+          null,
+          cvv2Match,
+          cvvResult,
+          avsAddr + avsZip + iavs,
+          avsResult,
+          authCode
       );
     } else if (
-      result == 12 // Not specific
-      || result == 50 // Insufficient funds
-      || result == 51 // Exceeds per transaction limit
-      || result == 112 // Failed AVS check
-      || result == 114 // Card security code mismatch
-      || result == 117 // Failed merchant rule check (parse RESPMSG)
-      || result == 125 // Declined by Fraud Protection Services Filter
-      || result == 128 // Declined by merchant after flagged for review by Fraud Protection Services Filter
+        result == 12 // Not specific
+            || result == 50 // Insufficient funds
+            || result == 51 // Exceeds per transaction limit
+            || result == 112 // Failed AVS check
+            || result == 114 // Card security code mismatch
+            || result == 117 // Failed merchant rule check (parse RESPMSG)
+            || result == 125 // Declined by Fraud Protection Services Filter
+            || result == 128 // Declined by merchant after flagged for review by Fraud Protection Services Filter
     ) {
       // Declined
       AuthorizationResult.DeclineReason declineReason;
@@ -545,46 +545,46 @@ public class PayflowPro implements MerchantServicesProvider {
       }
 
       return new AuthorizationResult(
-        getProviderId(),
-        TransactionResult.CommunicationResult.SUCCESS,
-        null,
-        null,
-        null,
-        pnref,
-        null,
-        Integer.toString(result),
-        AuthorizationResult.ApprovalResult.DECLINED,
-        respMsg,
-        declineReason,
-        null,
-        null,
-        cvv2Match,
-        cvvResult,
-        avsAddr+avsZip+iavs,
-        avsResult,
-        authCode
+          getProviderId(),
+          TransactionResult.CommunicationResult.SUCCESS,
+          null,
+          null,
+          null,
+          pnref,
+          null,
+          Integer.toString(result),
+          AuthorizationResult.ApprovalResult.DECLINED,
+          respMsg,
+          declineReason,
+          null,
+          null,
+          cvv2Match,
+          cvvResult,
+          avsAddr + avsZip + iavs,
+          avsResult,
+          authCode
       );
     } else if (result == 126) {
       // Hold
       return new AuthorizationResult(
-        getProviderId(),
-        TransactionResult.CommunicationResult.SUCCESS,
-        null,
-        null,
-        null,
-        pnref,
-        null,
-        Integer.toString(result),
-        AuthorizationResult.ApprovalResult.HOLD,
-        null,
-        null,
-        respMsg,
-        AuthorizationResult.ReviewReason.RISK_MANAGEMENT,
-        cvv2Match,
-        cvvResult,
-        avsAddr+avsZip+iavs,
-        avsResult,
-        authCode
+          getProviderId(),
+          TransactionResult.CommunicationResult.SUCCESS,
+          null,
+          null,
+          null,
+          pnref,
+          null,
+          Integer.toString(result),
+          AuthorizationResult.ApprovalResult.HOLD,
+          null,
+          null,
+          respMsg,
+          AuthorizationResult.ReviewReason.RISK_MANAGEMENT,
+          cvv2Match,
+          cvvResult,
+          avsAddr + avsZip + iavs,
+          avsResult,
+          authCode
       );
     } else {
       // Other results
@@ -594,9 +594,9 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.GATEWAY_SECURITY_GUIDELINES_NOT_MET;
       } else if (
-        result == 2
-        || result == 25
-        || result == 1021
+          result == 2
+              || result == 25
+              || result == 1021
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.CARD_TYPE_NOT_SUPPORTED;
@@ -604,15 +604,15 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_TRANSACTION_TYPE;
       } else if (
-        result == 4
-        || result == 1045
-        || result == -113
+          result == 4
+              || result == 1045
+              || result == -113
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_AMOUNT;
       } else if (
-        result == 5
-        || result == 1047
+          result == 5
+              || result == 1047
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_MERCHANT_ID;
@@ -626,13 +626,13 @@ public class PayflowPro implements MerchantServicesProvider {
         // TODO: Parse RESPMSG for more info
         errorCode = TransactionResult.ErrorCode.UNKNOWN;
       } else if (
-        result == 11
-        || result == 36
-        || result == 102
-        || result == 107
-        || result == 116
-        || result == 119
-        || result == 132
+          result == 11
+              || result == 36
+              || result == 102
+              || result == 107
+              || result == 116
+              || result == 119
+              || result == 132
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN;
@@ -640,20 +640,20 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.VOICE_AUTHORIZATION_REQUIRED;
       } else if (
-        result == 14
-        || result == 26
+          result == 14
+              || result == 26
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.PROVIDER_CONFIGURATION_ERROR;
       } else if (
-        result == 19
-        || result == 20
+          result == 19
+              || result == 20
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.TRANSACTION_NOT_FOUND;
       } else if (
-        result == 23
-        || result == 1048
+          result == 23
+              || result == 1048
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_CARD_NUMBER;
@@ -661,8 +661,8 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_EXPIRATION_DATE;
       } else if (
-        result == 27
-        || result == 28
+          result == 27
+              || result == 28
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INSUFFICIENT_PERMISSIONS;
@@ -670,12 +670,12 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.DUPLICATE;
       } else if (
-        result == 103
-        || result == 104
-        || result == 106
-        || result == 109
-        || result == 133
-        || result == 150
+          result == 103
+              || result == 104
+              || result == 106
+              || result == 109
+              || result == 133
+              || result == 150
       ) {
         communicationResult = TransactionResult.CommunicationResult.IO_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN;
@@ -683,31 +683,31 @@ public class PayflowPro implements MerchantServicesProvider {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN_5_MINUTES;
       } else if (
-        result == 151
-        || result == -14
+          result == 151
+              || result == -14
       ) {
         communicationResult = TransactionResult.CommunicationResult.IO_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN_5_MINUTES;
       } else if (
-        result == 1022
-        || result == 1049
+          result == 1022
+              || result == 1049
       ) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.INVALID_CURRENCY_CODE;
       } else if (
-        result == 101
-        || result == -23
-        || result == -30
-        || result == -31
-        || result == -32
-        || result == -108
+          result == 101
+              || result == -23
+              || result == -30
+              || result == -31
+              || result == -32
+              || result == -108
       ) {
         communicationResult = TransactionResult.CommunicationResult.LOCAL_ERROR;
         errorCode = TransactionResult.ErrorCode.PROVIDER_CONFIGURATION_ERROR;
       } else if (result == -99) {
         communicationResult = TransactionResult.CommunicationResult.LOCAL_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN_5_MINUTES;
-      } else if (result<0) {
+      } else if (result < 0) {
         // Negative indicates communication error
         communicationResult = TransactionResult.CommunicationResult.IO_ERROR;
         errorCode = TransactionResult.ErrorCode.ERROR_TRY_AGAIN;
@@ -717,24 +717,24 @@ public class PayflowPro implements MerchantServicesProvider {
       }
 
       return new AuthorizationResult(
-        getProviderId(),
-        communicationResult,
-        Integer.toString(result),
-        errorCode,
-        respMsg,
-        pnref,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        cvv2Match,
-        cvvResult,
-        avsAddr+avsZip+iavs,
-        avsResult,
-        authCode
+          getProviderId(),
+          communicationResult,
+          Integer.toString(result),
+          errorCode,
+          respMsg,
+          pnref,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          cvv2Match,
+          cvvResult,
+          avsAddr + avsZip + iavs,
+          avsResult,
+          authCode
       );
     }
   }
@@ -743,15 +743,15 @@ public class PayflowPro implements MerchantServicesProvider {
   public SaleResult sale(TransactionRequest transactionRequest, CreditCard creditCard) {
     AuthorizationResult authorizationResult = authorizeOrSale(transactionRequest, creditCard, "S");
     return new SaleResult(
-      authorizationResult,
-      new CaptureResult(
-        authorizationResult.getProviderId(),
-        authorizationResult.getCommunicationResult(),
-        authorizationResult.getProviderErrorCode(),
-        authorizationResult.getErrorCode(),
-        authorizationResult.getProviderErrorMessage(),
-        authorizationResult.getProviderUniqueId()
-      )
+        authorizationResult,
+        new CaptureResult(
+            authorizationResult.getProviderId(),
+            authorizationResult.getCommunicationResult(),
+            authorizationResult.getProviderErrorCode(),
+            authorizationResult.getErrorCode(),
+            authorizationResult.getProviderErrorMessage(),
+            authorizationResult.getProviderUniqueId()
+        )
     );
   }
 
@@ -792,20 +792,20 @@ public class PayflowPro implements MerchantServicesProvider {
 
   @Override
   public void updateCreditCardNumberAndExpiration(
-    CreditCard creditCard,
-    String cardNumber,
-    byte expirationMonth,
-    short expirationYear,
-    String cardCode
+      CreditCard creditCard,
+      String cardNumber,
+      byte expirationMonth,
+      short expirationYear,
+      String cardCode
   ) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
 
   @Override
   public void updateCreditCardExpiration(
-    CreditCard creditCard,
-    byte expirationMonth,
-    short expirationYear
+      CreditCard creditCard,
+      byte expirationMonth,
+      short expirationYear
   ) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
