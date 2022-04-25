@@ -13,3 +13,6 @@
 
 # Generics whitespace consistency
 0c1dc054cb5f70251a254695bfd5e64cf0329bec
+
+# Performed automatic source code clean-up with rewrite-maven-plugin
+4621bee74f80d24494ad8cb96505774db8d91e07
