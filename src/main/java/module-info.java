@@ -29,4 +29,4 @@ module com.aoapps.payments.payflowPro {
   requires payflow.v440; // <groupId>com.paypal</groupId><artifactId>payflow</artifactId>
   // Java SE
   requires java.logging;
-}
+} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
