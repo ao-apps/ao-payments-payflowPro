@@ -85,14 +85,17 @@ public class PayflowProTestTODO extends TestCase {
       public String getName() {
         return "TestPrincipal";
       }
+
       @Override
       public int hashCode() {
         return getName().hashCode();
       }
+
       @Override
       public String toString() {
         return getName();
       }
+
       @Override
       public boolean equals(Object obj) {
         if (obj == null) {
@@ -109,18 +112,22 @@ public class PayflowProTestTODO extends TestCase {
       public boolean addMember(Principal user) {
         throw new RuntimeException("Unimplemented");
       }
+
       @Override
       public String getName() {
         return "TestGroup";
       }
+
       @Override
       public boolean isMember(Principal member) {
         return "TestPrincipal".equals(member.getName());
       }
+
       @Override
       public Enumeration<? extends Principal> members() {
         throw new RuntimeException("Unimplemented");
       }
+
       @Override
       public boolean removeMember(Principal user) {
         throw new RuntimeException("Unimplemented");
@@ -331,7 +338,7 @@ public class PayflowProTestTODO extends TestCase {
   }
 
   /**
-   * Test a sale for Japnese Yen
+   * Test a sale for Japanese Yen.
    */
   public void testNewCardSaleJapaneseYen() throws IOException, SQLException {
     for (CreditCard testGoodCreditCard : testGoodCreditCards) {

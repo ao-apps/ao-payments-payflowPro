@@ -57,9 +57,10 @@ import paypal.payflow.TransactionResponse;
 import paypal.payflow.UserInfo;
 
 /**
- * Provider for the PayflowPro_XMLPay system<br>
- * <br>
+ * Provider for the PayflowPro_XMLPay system.
+ * <p>
  * Configuration parameters:
+ * </p>
  * <ol>
  *   <li>user -
  *     If you set up one or more additional users on the account, this value is the ID of the user authorized to process transactions.
@@ -71,7 +72,7 @@ import paypal.payflow.UserInfo;
  *     If you purchased your account directly from PayPal, use PayPal.  This values is case-sensitive.</li>
  *   <li>password - User's password (string).</li>
  * </ol>
- *
+ * <p>
  * TODO: Should we support the GetStatus call???<br>
  * TODO: Should we support Buyer Authentication Service?<br>
  * TODO: Should we support separate Freight and Handling amounts instead of just
@@ -82,6 +83,7 @@ import paypal.payflow.UserInfo;
  * TODO: Support SettleDate?<br>
  * TODO: Support SHIPTOPHONENUM?<br>
  * TODO: Possible better rates if we provide the merchant details and ship from details.
+ * </p>
  *
  * @author  AO Industries, Inc.
  */
@@ -100,6 +102,9 @@ public class PayflowPro implements MerchantServicesProvider {
   private final String partner;
   private final String password;
 
+  /**
+   * Creates a new provider for the PayflowPro_XMLPay system.
+   */
   public PayflowPro(String providerId, String user, String vendor, String partner, String password) {
     this.providerId = providerId;
     this.user = user;
@@ -109,6 +114,8 @@ public class PayflowPro implements MerchantServicesProvider {
   }
 
   /**
+   * Creates a new provider for the PayflowPro_XMLPay system.
+   *
    * @deprecated  certPath is no longer used
    */
   @Deprecated(forRemoval = true)
@@ -395,7 +402,7 @@ public class PayflowPro implements MerchantServicesProvider {
     }
 
     // Now try to process, considering as a GATEWAY_ERROR for any ErrorCodeExceptions.
-    Response response;
+    final Response response;
     try {
       // Now that the local request has been created successfully, contact the PayflowPro API.
       response = transaction.submitTransaction();
@@ -422,14 +429,14 @@ public class PayflowPro implements MerchantServicesProvider {
           null
       );
     }
-    TransactionResponse transactionResponse = response.getTransactionResponse();
+    final TransactionResponse transactionResponse = response.getTransactionResponse();
     // FraudResponse fraudResponse = response.getFraudResponse();
 
-    String pnref = transactionResponse.getPnref();
-    int result = transactionResponse.getResult();
-    String cvv2Match = transactionResponse.getCvv2Match();  // Y, N, X, or null
-    String respMsg = transactionResponse.getRespMsg();
-    String authCode = transactionResponse.getAuthCode();
+    final String pnref = transactionResponse.getPnref();
+    final int result = transactionResponse.getResult();
+    final String cvv2Match = transactionResponse.getCvv2Match();  // Y, N, X, or null
+    final String respMsg = transactionResponse.getRespMsg();
+    final String authCode = transactionResponse.getAuthCode();
     String avsAddr = transactionResponse.getAvsAddr(); // Y, N, X, or null
     if (avsAddr == null || avsAddr.length() == 0) {
       avsAddr = "?";
@@ -445,7 +452,7 @@ public class PayflowPro implements MerchantServicesProvider {
     // String cardSecure = transactionResponse.getCardSecure(); // ???
 
     // Convert to CvvResult
-    AuthorizationResult.CvvResult cvvResult;
+    final AuthorizationResult.CvvResult cvvResult;
     if ("Y".equals(cvv2Match)) {
       cvvResult = AuthorizationResult.CvvResult.MATCH;
     } else if ("N".equals(cvv2Match)) {
@@ -462,7 +469,7 @@ public class PayflowPro implements MerchantServicesProvider {
     }
 
     // Convert to AvsResult
-    AuthorizationResult.AvsResult avsResult;
+    final AuthorizationResult.AvsResult avsResult;
     if ("Y".equals(avsAddr)) {
       if ("Y".equals(avsZip)) {
         avsResult = AuthorizationResult.AvsResult.ADDRESS_Y_ZIP_5;
@@ -522,7 +529,7 @@ public class PayflowPro implements MerchantServicesProvider {
             || result == 128 // Declined by merchant after flagged for review by Fraud Protection Services Filter
     ) {
       // Declined
-      AuthorizationResult.DeclineReason declineReason;
+      final AuthorizationResult.DeclineReason declineReason;
       if (result == 12) {
         declineReason = AuthorizationResult.DeclineReason.NO_SPECIFIC;
       } else if (result == 50) {
@@ -588,8 +595,8 @@ public class PayflowPro implements MerchantServicesProvider {
       );
     } else {
       // Other results
-      TransactionResult.CommunicationResult communicationResult;
-      TransactionResult.ErrorCode errorCode;
+      final TransactionResult.CommunicationResult communicationResult;
+      final TransactionResult.ErrorCode errorCode;
       if (result == 1) {
         communicationResult = TransactionResult.CommunicationResult.GATEWAY_ERROR;
         errorCode = TransactionResult.ErrorCode.GATEWAY_SECURITY_GUIDELINES_NOT_MET;
@@ -821,7 +828,12 @@ public class PayflowPro implements MerchantServicesProvider {
   }
 
   @Override
-  public Map<String, TokenizedCreditCard> getTokenizedCreditCards(Map<String, CreditCard> persistedCards, PrintWriter verboseOut, PrintWriter infoOut, PrintWriter warningOut) throws UnsupportedOperationException {
+  public Map<String, TokenizedCreditCard> getTokenizedCreditCards(
+      Map<String, CreditCard> persistedCards,
+      PrintWriter verboseOut,
+      PrintWriter infoOut,
+      PrintWriter warningOut
+  ) throws UnsupportedOperationException {
     throw new UnsupportedOperationException();
   }
 }
