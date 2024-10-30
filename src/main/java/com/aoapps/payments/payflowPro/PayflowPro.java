@@ -58,9 +58,9 @@ import paypal.payflow.UserInfo;
 
 /**
  * Provider for the PayflowPro_XMLPay system.
- * <p>
- * Configuration parameters:
- * </p>
+ *
+ * <p>Configuration parameters:</p>
+ *
  * <ol>
  *   <li>user -
  *     If you set up one or more additional users on the account, this value is the ID of the user authorized to process transactions.
@@ -72,8 +72,8 @@ import paypal.payflow.UserInfo;
  *     If you purchased your account directly from PayPal, use PayPal.  This values is case-sensitive.</li>
  *   <li>password - User's password (string).</li>
  * </ol>
- * <p>
- * TODO: Should we support the GetStatus call???<br>
+ *
+ * <p>TODO: Should we support the GetStatus call???<br>
  * TODO: Should we support Buyer Authentication Service?<br>
  * TODO: Should we support separate Freight and Handling amounts instead of just
  *       the one shipping?  We would need to automatically combine them on
@@ -82,8 +82,7 @@ import paypal.payflow.UserInfo;
  * TODO: Use AMEXID?<br>
  * TODO: Support SettleDate?<br>
  * TODO: Support SHIPTOPHONENUM?<br>
- * TODO: Possible better rates if we provide the merchant details and ship from details.
- * </p>
+ * TODO: Possible better rates if we provide the merchant details and ship from details.</p>
  *
  * @author  AO Industries, Inc.
  */
