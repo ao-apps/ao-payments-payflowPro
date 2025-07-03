@@ -22,7 +22,7 @@ Provider for the [Payflow Pro XMLPay system](https://developer.paypal.com/docs/c
 * [Project Home](https://oss.aoapps.com/payments/payflowPro/)
 * [Changelog](https://oss.aoapps.com/payments/payflowPro/changelog)
 * [API Docs](https://oss.aoapps.com/payments/payflowPro/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-payments-payflowPro)
+* [Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-payments-payflowPro)
 * [GitHub](https://github.com/ao-apps/ao-payments-payflowPro)
 
 ## Contact Us
