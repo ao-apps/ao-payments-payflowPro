@@ -347,7 +347,7 @@ public class PayflowPro implements MerchantServicesProvider {
       CardTender cardTender = new CardTender(ppCreditCard);
 
       // ClientInfo
-      //ClientInfo clientInfo = new ClientInfo();
+      // ClientInfo clientInfo = new ClientInfo();
 
       // RequestID: Use orderNumber if available, fall-back to PayflowUtility
       String requestId;
@@ -364,7 +364,7 @@ public class PayflowPro implements MerchantServicesProvider {
       } else {
         throw new AssertionError("Unexpected value for trxType: " + trxType);
       }
-      //transaction.setClientInfo(clientInfo);
+      // transaction.setClientInfo(clientInfo);
 
       /* TODO: Don't know what to do with these:
       try {
