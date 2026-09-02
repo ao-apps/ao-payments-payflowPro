@@ -1,6 +1,6 @@
 /*
  * ao-payments-payflowPro - Provider for the Payflow Pro XMLPay system.
- * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2019, 2020, 2021, 2022, 2024, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -366,17 +366,16 @@ public class PayflowPro implements MerchantServicesProvider {
       }
       // transaction.setClientInfo(clientInfo);
 
-      /* TODO: Don't know what to do with these:
-      try {
-        addTrimmedParameter(request, "CUSTHOSTNAME", InetAddress.getLocalHost().getHostName(), 60);
-      } catch (IOException err) {
-        logger.log(Level.WARNING, null, err);
-      }
-      String ss = creditCard.getCustomerTaxId();
-      if (ss != null && ss.length() > 0) {
-        addTrimmedParameter(request, "SS", ss, 35);
-      }
-       */
+      // TODO: Don't know what to do with these:
+      // try {
+      //   addTrimmedParameter(request, "CUSTHOSTNAME", InetAddress.getLocalHost().getHostName(), 60);
+      // } catch (IOException err) {
+      //   logger.log(Level.WARNING, null, err);
+      // }
+      // String ss = creditCard.getCustomerTaxId();
+      // if (ss != null && ss.length() > 0) {
+      //   addTrimmedParameter(request, "SS", ss, 35);
+      // }
     } catch (Exception err) {
       return new AuthorizationResult(
           getProviderId(),
