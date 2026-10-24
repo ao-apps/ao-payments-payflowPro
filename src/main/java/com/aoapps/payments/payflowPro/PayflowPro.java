@@ -370,7 +370,7 @@ public class PayflowPro implements MerchantServicesProvider {
       // try {
       //   addTrimmedParameter(request, "CUSTHOSTNAME", InetAddress.getLocalHost().getHostName(), 60);
       // } catch (IOException err) {
-      //   logger.log(Level.WARNING, null, err);
+      //   logger.log(Level.WARNING, "TODO: message here", err);
       // }
       // String ss = creditCard.getCustomerTaxId();
       // if (ss != null && ss.length() > 0) {
